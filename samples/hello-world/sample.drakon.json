@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "name": "Hello World Sample",
+  "nodes": [
+    { "id": "start", "kind": "Start", "text": "Старт", "x": 100, "y": 40 },
+    { "id": "action1", "kind": "Action", "text": "print(1)", "x": 100, "y": 140 },
+    { "id": "end", "kind": "End", "text": "Конец", "x": 100, "y": 240 }
+  ],
+  "connections": [
+    { "id": "c1", "fromNodeId": "start", "fromPort": "Out", "toNodeId": "action1", "toPort": "In" },
+    { "id": "c2", "fromNodeId": "action1", "fromPort": "Out", "toNodeId": "end", "toPort": "In" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "name": "Max Of Two",
+  "nodes": [
+    { "id": "start", "kind": "Start", "text": "Старт", "x": 100, "y": 40 },
+    { "id": "a", "kind": "Action", "text": "a = 10", "x": 100, "y": 120 },
+    { "id": "b", "kind": "Action", "text": "b = 20", "x": 100, "y": 200 },
+    { "id": "cond", "kind": "Condition", "text": "a > b", "x": 100, "y": 280 },
+    { "id": "trueAssign", "kind": "Action", "text": "result = a", "x": 30, "y": 380 },
+    { "id": "falseAssign", "kind": "Action", "text": "result = b", "x": 220, "y": 380 },
+    { "id": "print", "kind": "Action", "text": "print(result)", "x": 100, "y": 480 },
+    { "id": "end", "kind": "End", "text": "Конец", "x": 100, "y": 560 }
+  ],
+  "connections": [
+    { "id": "c1", "fromNodeId": "start", "fromPort": "Out", "toNodeId": "a", "toPort": "In" },
+    { "id": "c2", "fromNodeId": "a", "fromPort": "Out", "toNodeId": "b", "toPort": "In" },
+    { "id": "c3", "fromNodeId": "b", "fromPort": "Out", "toNodeId": "cond", "toPort": "In" },
+    { "id": "c4", "fromNodeId": "cond", "fromPort": "True", "toNodeId": "trueAssign", "toPort": "In" },
+    { "id": "c5", "fromNodeId": "cond", "fromPort": "False", "toNodeId": "falseAssign", "toPort": "In" },
+    { "id": "c6", "fromNodeId": "trueAssign", "fromPort": "Out", "toNodeId": "print", "toPort": "In" },
+    { "id": "c7", "fromNodeId": "falseAssign", "fromPort": "Out", "toNodeId": "print", "toPort": "In" },
+    { "id": "c8", "fromNodeId": "print", "fromPort": "Out", "toNodeId": "end", "toPort": "In" }
+  ]
+}

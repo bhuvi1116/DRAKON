@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Serialization\Serialization.csproj" />
+    <ProjectReference Include="..\Validation\Validation.csproj" />
+    <ProjectReference Include="..\CodeGen\CodeGen.csproj" />
+    <ProjectReference Include="..\Build\Build.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DrakonNx.Cli</RootNamespace>
+    <AssemblyName>drakon-nx</AssemblyName>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,17 @@
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.AssemblyInfoInputs.cache
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.AssemblyInfo.cs
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.csproj.CoreCompileInputs.cache
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.csproj.AssemblyReference.cache
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\CodeGen.deps.json
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\CodeGen.dll
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\CodeGen.pdb
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\Core.dll
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\Validation.dll
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\Core.pdb
+D:\source\personal\drakon-studio\src\CodeGen\bin\Debug\net8.0\Validation.pdb
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.csproj.Up2Date
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.dll
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\refint\CodeGen.dll
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\CodeGen.pdb
+D:\source\personal\drakon-studio\src\CodeGen\obj\Debug\net8.0\ref\CodeGen.dll

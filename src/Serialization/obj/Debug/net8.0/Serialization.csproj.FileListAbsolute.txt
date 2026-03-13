@@ -1,0 +1,15 @@
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.AssemblyInfoInputs.cache
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.AssemblyInfo.cs
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.csproj.CoreCompileInputs.cache
+D:\source\personal\drakon-studio\src\Serialization\bin\Debug\net8.0\Serialization.deps.json
+D:\source\personal\drakon-studio\src\Serialization\bin\Debug\net8.0\Serialization.dll
+D:\source\personal\drakon-studio\src\Serialization\bin\Debug\net8.0\Serialization.pdb
+D:\source\personal\drakon-studio\src\Serialization\bin\Debug\net8.0\Core.dll
+D:\source\personal\drakon-studio\src\Serialization\bin\Debug\net8.0\Core.pdb
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.csproj.AssemblyReference.cache
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serializ.9D12218F.Up2Date
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.dll
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\refint\Serialization.dll
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\Serialization.pdb
+D:\source\personal\drakon-studio\src\Serialization\obj\Debug\net8.0\ref\Serialization.dll

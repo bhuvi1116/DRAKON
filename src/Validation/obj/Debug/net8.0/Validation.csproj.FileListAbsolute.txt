@@ -1,0 +1,15 @@
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.AssemblyInfoInputs.cache
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.AssemblyInfo.cs
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.csproj.CoreCompileInputs.cache
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.csproj.AssemblyReference.cache
+D:\source\personal\drakon-studio\src\Validation\bin\Debug\net8.0\Validation.deps.json
+D:\source\personal\drakon-studio\src\Validation\bin\Debug\net8.0\Validation.dll
+D:\source\personal\drakon-studio\src\Validation\bin\Debug\net8.0\Validation.pdb
+D:\source\personal\drakon-studio\src\Validation\bin\Debug\net8.0\Core.dll
+D:\source\personal\drakon-studio\src\Validation\bin\Debug\net8.0\Core.pdb
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.csproj.Up2Date
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.dll
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\refint\Validation.dll
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\Validation.pdb
+D:\source\personal\drakon-studio\src\Validation\obj\Debug\net8.0\ref\Validation.dll

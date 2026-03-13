@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "name": "Simple Branch Sample",
+  "nodes": [
+    { "id": "start", "kind": "Start", "text": "Старт", "x": 100, "y": 40 },
+    { "id": "setx", "kind": "Action", "text": "x = 5", "x": 100, "y": 140 },
+    { "id": "cond", "kind": "Condition", "text": "x > 0", "x": 100, "y": 240 },
+    { "id": "t1", "kind": "Action", "text": "print(1)", "x": 30, "y": 360 },
+    { "id": "f1", "kind": "Action", "text": "print(0)", "x": 220, "y": 360 },
+    { "id": "end", "kind": "End", "text": "Конец", "x": 100, "y": 480 }
+  ],
+  "connections": [
+    { "id": "c1", "fromNodeId": "start", "fromPort": "Out", "toNodeId": "setx", "toPort": "In" },
+    { "id": "c2", "fromNodeId": "setx", "fromPort": "Out", "toNodeId": "cond", "toPort": "In" },
+    { "id": "c3", "fromNodeId": "cond", "fromPort": "True", "toNodeId": "t1", "toPort": "In" },
+    { "id": "c4", "fromNodeId": "cond", "fromPort": "False", "toNodeId": "f1", "toPort": "In" },
+    { "id": "c5", "fromNodeId": "t1", "fromPort": "Out", "toNodeId": "end", "toPort": "In" },
+    { "id": "c6", "fromNodeId": "f1", "fromPort": "Out", "toNodeId": "end", "toPort": "In" }
+  ]
+}

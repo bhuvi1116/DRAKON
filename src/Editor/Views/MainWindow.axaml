@@ -1,0 +1,196 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:DrakonNx.Editor.Controls"
+        x:Class="DrakonNx.Editor.Views.MainWindow"
+        mc:Ignorable="d"
+        Width="1780"
+        Height="1020"
+        Title="DRAKON Studio 5.0">
+  <Grid RowDefinitions="34,52,*,220" ColumnDefinitions="320,*,360">
+    <Border Grid.ColumnSpan="3" Background="#2D2D30" BorderBrush="#3F3F46" BorderThickness="0,0,0,1">
+      <DockPanel Margin="10,0">
+        <StackPanel Orientation="Horizontal" Spacing="18">
+          <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" Text="Файл" />
+          <TextBlock VerticalAlignment="Center" Text="Правка" />
+          <TextBlock VerticalAlignment="Center" Text="Диаграмма" />
+          <TextBlock VerticalAlignment="Center" Text="Сборка" />
+          <TextBlock VerticalAlignment="Center" Text="Вид" />
+          <TextBlock VerticalAlignment="Center" Text="Справка" />
+        </StackPanel>
+        <TextBlock DockPanel.Dock="Right"
+                   VerticalAlignment="Center"
+                   FontWeight="SemiBold"
+                   Foreground="#9CDCFE"
+                   Text="{Binding BuildStatus}" />
+      </DockPanel>
+    </Border>
+
+    <Border Grid.Row="1" Grid.ColumnSpan="3" Background="#252526" BorderBrush="#3F3F46" BorderThickness="0,0,0,1">
+      <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <StackPanel Orientation="Horizontal" Spacing="8" Margin="10,8">
+          <Button Command="{Binding RefreshPreviewCommand}" Content="Обновить" />
+          <Button Command="{Binding ApplyAutoLayoutCommand}" Content="Auto-layout" />
+          <Button Command="{Binding CreateFromTemplateCommand}" Content="Новый из шаблона" />
+          <Button Command="{Binding OpenCommand}" Content="Открыть" />
+          <Button Command="{Binding SaveCommand}" Content="Сохранить" />
+          <Button Command="{Binding SaveAsCommand}" Content="Сохранить как" />
+          <Separator Width="12" />
+          <Button Command="{Binding UndoCommand}" Content="Undo" />
+          <Button Command="{Binding RedoCommand}" Content="Redo" />
+          <Separator Width="12" />
+          <Button Command="{Binding ExportCommand}" Content="Экспорт" />
+          <Button Command="{Binding BuildAndRunCommand}" Content="Собрать и запустить" />
+          <Separator Width="12" />
+          <Button Command="{Binding AddNodeCommand}" Content="Добавить узел" />
+          <Button Command="{Binding AddConnectionCommand}" Content="Добавить связь" />
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+
+    <Border Grid.Row="2" Grid.Column="0" Classes="ide-panel" Margin="8,8,0,8" Padding="10">
+      <Grid RowDefinitions="Auto,*,Auto,*">
+        <TextBlock Classes="panel-title" Text="Обозреватель / Шаблоны" />
+        <ScrollViewer Grid.Row="1" Margin="0,10,0,0">
+          <StackPanel Spacing="8">
+            <TextBlock Text="Шаблон" />
+            <ComboBox SelectedItem="{Binding SelectedTemplateName}" ItemsSource="{Binding AvailableTemplates}" />
+            <TextBlock Text="Имя проекта" />
+            <TextBox Text="{Binding NewProjectName}" />
+            <TextBlock Text="Путь к .drakon.json" />
+            <TextBox Text="{Binding NewProjectPath}" />
+            <Button Command="{Binding CreateFromTemplateCommand}" Content="Создать проект" />
+            <TextBlock Margin="0,8,0,0" Text="Текущий файл" />
+            <TextBox IsReadOnly="True" Text="{Binding CurrentFilePath}" />
+            <TextBlock Text="Открыть файл" />
+            <TextBox Text="{Binding OpenFilePath}" />
+            <TextBlock Text="Сохранить как" />
+            <TextBox Text="{Binding SaveAsFilePath}" />
+            <TextBlock Margin="0,8,0,0" Text="Профиль" />
+            <TextBlock TextWrapping="Wrap" Text="{Binding ProfileSummary}" />
+            <TextBlock Margin="0,8,0,0" Text="История" />
+            <TextBox AcceptsReturn="True" Height="120" IsReadOnly="True" Text="{Binding HistorySummary}" />
+            <TextBlock Margin="0,8,0,0" Text="Шаг редактора" />
+            <TextBox AcceptsReturn="True" Height="90" IsReadOnly="True" Text="{Binding CanvasSummary}" />
+            <TextBlock Margin="0,8,0,0" Text="Auto-layout / Шампур" />
+            <TextBox AcceptsReturn="True" Height="120" IsReadOnly="True" Text="{Binding LayoutSummary}" />
+          </StackPanel>
+        </ScrollViewer>
+        <TextBlock Grid.Row="2" Margin="0,10,0,0" Classes="panel-title" Text="Узлы" />
+        <ListBox Grid.Row="3" Margin="0,10,0,0" ItemsSource="{Binding Nodes}" SelectedItem="{Binding SelectedNode}">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding DisplayName}" />
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="2" Grid.Column="1" Margin="8">
+      <Grid RowDefinitions="Auto,*">
+        <Border Classes="ide-panel" Padding="8,6">
+          <DockPanel>
+            <StackPanel Orientation="Horizontal" Spacing="12">
+              <TextBlock Classes="panel-title" Text="Visual Editor / DRAKON Canvas" />
+              <TextBlock VerticalAlignment="Center" Foreground="#9CDCFE" Text="{Binding EditableDocumentName}" />
+              <Border Background="#3A3D41" CornerRadius="10" Padding="8,2">
+                <TextBlock Foreground="#C5E1A5" Text="v5.0" />
+              </Border>
+            </StackPanel>
+            <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center" Text="{Binding ValidationSummary}" />
+          </DockPanel>
+        </Border>
+        <Border Grid.Row="1" Classes="ide-surface" Margin="0,8,0,0" Padding="8">
+          <controls:DiagramCanvasControl />
+        </Border>
+      </Grid>
+    </Grid>
+
+    <Border Grid.Row="2" Grid.Column="2" Classes="ide-panel" Margin="0,8,8,8" Padding="10">
+      <ScrollViewer>
+        <StackPanel Spacing="8">
+          <TextBlock Classes="panel-title" Text="Свойства / Toolbox" />
+          <TextBlock Text="Тип нового узла" />
+          <ComboBox SelectedItem="{Binding NewNodeKind}" ItemsSource="{Binding AvailableNodeKinds}" />
+          <TextBlock Text="Текст нового узла" />
+          <TextBox Text="{Binding NewNodeText}" />
+          <Button Command="{Binding AddNodeCommand}" Content="Добавить узел" />
+          <TextBlock Margin="0,8,0,0" Text="Текст выбранного узла" />
+          <TextBox Text="{Binding SelectedNodeText}" />
+          <Button Command="{Binding ApplySelectedNodeTextCommand}" Content="Применить текст" />
+          <Button Command="{Binding DeleteSelectedNodeCommand}" Content="Удалить выбранный узел" />
+          <TextBlock Margin="0,8,0,0" Text="Координаты X / Y" />
+          <Grid ColumnDefinitions="*,*">
+            <TextBox Margin="0,0,4,0"
+              Text="{Binding SelectedNodeX}" />
+            <TextBox Grid.Column="1"
+                     Margin="4,0,0,0"
+                     Text="{Binding SelectedNodeY}" />
+          </Grid>
+          <Button Command="{Binding ApplySelectedNodePositionCommand}" Content="Применить координаты" />
+          <TextBlock Text="Размер сетки" />
+          <TextBox Text="{Binding GridSize}" />
+          <Button Command="{Binding SnapSelectedNodeToGridCommand}" Content="Привязать к сетке" />
+          <TextBlock Margin="0,8,0,0" Text="Связь: от узла" />
+          <ComboBox SelectedItem="{Binding ConnectionFromNode}" ItemsSource="{Binding Nodes}">
+            <ComboBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding DisplayName}" /></DataTemplate></ComboBox.ItemTemplate>
+          </ComboBox>
+          <TextBlock Text="Порт источника" />
+          <ComboBox SelectedItem="{Binding SelectedFromPort}" ItemsSource="{Binding AvailablePorts}" />
+          <TextBlock Text="Связь: к узлу" />
+          <ComboBox SelectedItem="{Binding ConnectionToNode}" ItemsSource="{Binding Nodes}">
+            <ComboBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding DisplayName}" /></DataTemplate></ComboBox.ItemTemplate>
+          </ComboBox>
+          <TextBlock Text="Порт назначения" />
+          <ComboBox SelectedItem="{Binding SelectedToPort}" ItemsSource="{Binding AvailablePorts}" />
+          <Button Command="{Binding AddConnectionCommand}" Content="Создать связь" />
+          <TextBlock Margin="0,8,0,0" Text="Связи" />
+          <ListBox Height="140" ItemsSource="{Binding Connections}" SelectedItem="{Binding SelectedConnection}">
+            <ListBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding DisplayName}" /></DataTemplate></ListBox.ItemTemplate>
+          </ListBox>
+          <Button Command="{Binding DeleteSelectedConnectionCommand}" Content="Удалить выбранную связь" />
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+
+    <Border Grid.Row="3" Grid.ColumnSpan="3" Classes="ide-panel" Margin="8,0,8,8" Padding="10">
+      <Grid ColumnDefinitions="1.4*,1*,1*">
+        <Grid RowDefinitions="Auto,*">
+          <TextBlock Classes="panel-title" Text="Output" />
+          <TextBox Grid.Row="1"
+                   Margin="0,10,0,0"
+                   AcceptsReturn="True"
+                   IsReadOnly="True"
+                   FontFamily="Cascadia Code, Consolas, monospace"
+                   Text="{Binding BuildLog}" />
+        </Grid>
+
+        <Grid Grid.Column="1"
+              RowDefinitions="Auto,*"
+              Margin="10,0,0,0">
+          <TextBlock Classes="panel-title" Text="Generated C99" />
+          <TextBox Grid.Row="1"
+                   Margin="0,10,0,0"
+                   AcceptsReturn="True"
+                   IsReadOnly="True"
+                   FontFamily="Cascadia Code, Consolas, monospace"
+                   Text="{Binding GeneratedCPreview}" />
+        </Grid>
+
+        <Grid Grid.Column="2"
+              RowDefinitions="Auto,*"
+              Margin="10,0,0,0">
+          <TextBlock Classes="panel-title" Text="JSON / Build" />
+          <TextBox Grid.Row="1"
+                   Margin="0,10,0,0"
+                   AcceptsReturn="True"
+                   IsReadOnly="True"
+                   FontFamily="Cascadia Code, Consolas, monospace"
+                   Text="{Binding SerializedPreview}" />
+        </Grid>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>
